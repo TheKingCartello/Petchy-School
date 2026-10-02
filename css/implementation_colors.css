@@ -1,0 +1,88 @@
+.responsive-form input, .responsive-form textarea, .responsive-form select{border-color: #000000; background-color: #ffffff;}
+/*required color*/
+.responsive-form .required {color:#0000FF;}
+/*focus color*/
+.responsive-form input:focus, .responsive-form textarea:focus, .responsive-form select:focus {border-color:#0000FF;}
+/*error color*/
+.responsive-form .form-label.form-captcha-error {color:#0000FF;}
+.responsive-form .form-item.error input {border-color: #0000FF;}
+.responsive-form .form-item .captchaDetail {border-color: #0000FF;color:#0000FF;}
+/*button colors*/
+.color-button {background: #ffffff; border-color: #0000FF; color:#0000FF;}
+.color-button:hover {background: #0000FF;  color: #ffffff !important; text-decoration:none !important;}
+/*captcha error color*/
+.captchaErrorText {color:#0000FF;}
+/*social stream -- the background color of facebook link boxes.*/
+.link-wrapper{background:#ffffff; border-color: #000000;}
+/*month text on calendar*/
+.calendar_form .calendar_nav_month{color:#0000FF;}
+/* calendar header links (various icons and the filter controls) */
+.calendar_form  a{ color:#0000FF;}
+/*prev/next month links */
+.calendar_form  .calendar_nav_previous a, .calendar_form .calendar_nav_next a{color:#000000;}
+/*line in between the grid/list view icons and the print/rss/ical icons.*/
+.calendar_form .calendar_view{border-color:#000000;}
+/* category/go-to-date label color*/
+.calendar_options label{ color:#0000FF;}
+/* line between category filter and go-to-date controls
+.calendar_options .categoryid{ border-color:#000000;}
+/*border and background for category drop-down*/
+.category{ border-color:#000000; background-color:#ffffff;}
+/*border and text for goto date input field*/
+.calendar_options input[type="text"]{ border-color: #0000FF; border-radius:0; box-shadow:inset 0 0 2px #0000FF; color:#0000FF}
+/*calendar grid border*/
+.calendar_grid td{ border-color:#000000;}
+/*default event text color (for events without colored categories)*/
+.calendar_grid td a{color:#000000;}
+/*color for the numerals for each day*/
+.calendar_grid td a span{color:#000000;}
+/*color for line between each event in the calendar grid*/
+.calendar_grid .calendar_grid_event{border-color:#000000;}
+/*event tooltip border & background*/
+.calendar_grid .calendar_grid_event .calendar_event_tooltip{ background-color:#ffffff; border-color:#000000;}
+/*tooltip title*/
+.calendar_grid .calendar_grid_event .calendar_event_tooltip a{ color:#0000FF;}
+/*tooltip date*/
+.calendar_grid .calendar_grid_event .calendar_event_tooltip .calendar_tooltip_dt{ color:#0000FF;}
+/*tooltip description*/
+.calendar_grid .calendar_grid_event .calendar_event_tooltip .calendar_tooltip_desc{ color:#000000;}
+/*calendar day headers background*/
+.calendar_grid .calendar_grid_headings{ background:#0000FF}
+/*calendar day headers text*/
+.calendar_grid .calendar_grid_headings th{color:#ffffff;}
+/*calendar list view day headers background and text*/
+.calendar_list .calendar_list_date{background-color:#0000FF; color:#ffffff;}
+/* Message Board tool */
+.blog-column2-comment{border-color:#000000;}
+/*Slideshow tool*/
+.cycle-pager span{color:#ffffff;}
+.cycle-pager span.cycle-pager-active{color:#000000;} 
+.cycle_prev_next{color:#ffffff;}
+/*This is the border for each row in the directory*/
+.dir-border{border-color:#0000FF;}
+/*This is the background color and font for the header row of directory*/
+.dir-head-back{ background-color:#0000FF; color:#ffffff;}
+/*These are the default colors for a linked sortable header*/
+.dir-head-link{ color:#ffffff;}
+.dir-head-link:hover{ color:#ffffff;}
+/*This is the color for a name that is not linked*/
+.dir-unlinked{color:#000000;}
+/*This is the hover color for a row in the directory*/
+.dir-row:hover{ background:#ffffff;}
+/*End Faculty List and MemberSearch Tool Colors*/
+/*Profiles Name Dropdown - Background*/
+.detail_profiles .staff_header .profile ul{background-color:#0000FF;}
+/*Profiles Overlay Background and Color*/
+.detail_profiles .staff_photo>ul>li .overlay{background:rgba(0,0,255,0.7);}
+.detail_profiles .staff_photo>ul>li .overlaycolor {color:#ffffff;}
+/*Profiles Grid Background Color*/
+.detail_profiles .image_container {background-color:#0000FF;}
+/*Tabs Tool*/
+.tab-content-tab button {background-color:#0000FF !important; color:#ffffff !important; border-color:#0000FF !important; border-right-color:#ffffff !important;}
+.tab-content-tab button:hover, .tab-content-tab button.active {color:#0000FF !important; background-color:#ffffff !important; border-color:#0000FF !important;}
+.tab-content-tab button:hover:nth-child(n+2), .tab-content-tab button.active:nth-child(n+2) {border-left-color:#ffffff !important;}
+@media only screen and (max-width: 1023px) {
+.tab-content-tab button:hover:nth-child(n+2), .tab-content-tab button.active:nth-child(n+2) {border-left-color:#0000FF !important;}
+.tab-content-tab button {border-right-color:#0000FF !important;}
+}
+

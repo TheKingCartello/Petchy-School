@@ -1,0 +1,280 @@
+/**** Menu Stylesheet for WESTBEND ****/
+
+/* Desktop Nav */
+
+.flyout_arrow svg{ height: 15px; width: auto; vertical-align: middle;}
+.flyout_arrow svg, .flyout_arrow svg *{ fill: var(--color-base-1);}
+
+#menu a:not(.ln){
+	margin-top:0;
+}
+
+#menu > ul > li:not(:first-child) > a.ln + ul + span {
+    top: 27px;
+}
+
+#topnav > li .button_icon > svg {
+    height: 8px;
+    width: auto;
+    vertical-align: middle;
+}
+#topnav > li .button_icon > svg*{fill: var(--color-base-1);}
+#topnav > li .button_icon{visibility: hidden; color: var(--color-base-1);}
+#topnav > li:hover .button_icon{visibility: visible;}
+
+
+@media all and (max-width: 1500px){
+	#topnav > li > a{
+		font-size: 1rem; 
+	}
+}
+@media all and (min-width: 1500px){
+	#topnav > li > a{
+		font-size: 1rem; 
+	}
+}
+
+@media all and (min-width: 1200px){
+
+	.flyout_arrow{ position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-size: 0;}
+	.right_drop .flyout_arrow{ right: auto; left: 1rem; transform: translateY(-50%) rotate(180deg);}
+
+	.flyout_arrow svg{ height: 15px; width: auto; vertical-align: middle;}
+	.flyout_arrow svg, .flyout_arrow svg *{ fill: #000;}
+
+	.mobile_bottom_row, .togglemenu, .mobile_top_row, .subnav_toggle, .drop_level2_wrapper{ display: none;}
+
+	#topnav{ list-style: none; margin: 0; padding: 0; display: flex; align-items: center;}
+
+	#topnav li{ position: relative; transition:all 0.3s ease-out; }
+
+	#topnav{ margin-right: -1rem; }
+	#topnav > li{ padding: 0 1rem; }
+	#topnav > li > a{ 
+		white-space: nowrap; 
+		letter-spacing: 0px; 
+		font-weight: 400; 
+		text-decoration: none; 
+		display: inline-block; 
+		padding: 2.333333333333333rem 0;
+		color:#272727;
+		}
+	
+	
+	.drop_level2_wrapper{ background: #fff; width: 270px;}
+	.drop_level2_wrapper ul{ list-style: none; margin: 0; padding: 0;}
+
+	#topnav li .drop_level2_wrapper a{ 
+		text-decoration: none; 
+		color: #000 !important;
+		font-size: 1rem; 
+		line-height: 155%; 
+		font-weight: 400; 
+		display: block;
+	}
+	#topnav li .drop_level2_wrapper a.drop1_haschildren{ padding-right: 2rem;}
+	#topnav li.right_drop .drop_level2_wrapper a.drop1_haschildren{ padding-right: 0; padding-left: 2rem;}
+	#topnav li .drop_level2_wrapper li:hover{ background: var(--color-base-1);}
+	#topnav li .drop_level2_wrapper li:hover > a{ color: var(--color-overlay-1) !important;}
+	#topnav li .drop_level2_wrapper li:hover > a > svg *{ fill: var(--color-overlay-1);}
+	#topnav li .drop_level2_wrapper li:hover > a{ font-weight:400; }
+
+	#topnav > li > .drop_level2_wrapper{ position: absolute; top: 80%; left: -1.5rem; z-index: 2;}
+	#topnav > li.right_drop > .drop_level2_wrapper{ left: auto; right: -1.5rem;}
+
+	#topnav > li > .drop_level2_wrapper li{ padding: 0.5rem 1rem;}
+
+	/* #topnav > li:hover {background: var(--color-base-2);} */
+	#topnav > li:hover > a {color: var(--color-base-1);}
+	.nav_panel.dark #topnav > li:hover > a {color: var(--color-base-3);}
+	#topnav > li:hover > a > span > svg *{fill: var(--color-base-1);}
+	.nav_panel.dark #topnav > li:hover > a > span > svg *{fill: var(--color-base-3);}
+
+	#topnav > li:hover > .drop_level2_wrapper{ 
+		display: block; 
+		padding: 1.5rem 0 1.5rem 0; 
+		background: #fff;
+		border-radius: 6px;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	}
+	
+	#topnav > li > .drop_level2_wrapper > ul > li:hover { background: var(--color-base-1);}
+	.nav_panel.dark  #topnav > li > .drop_level2_wrapper > ul > li:hover { background: var(--color-base-3);}
+	#topnav > li > .drop_level2_wrapper > ul > li:hover > a{ color: var(--color-overlay-1) !important;}
+	#topnav > li > .drop_level2_wrapper > ul > li:hover > a svg *{ fill: var(--color-overlay-1);}
+
+
+	/* Flyout (Level 3 items) */
+	#topnav li .drop_level2_wrapper li .drop_level2_wrapper{ position: absolute; left: 100%; top: -26px; z-index: 1;border-radius: 6px;}
+	#topnav li.right_drop .drop_level2_wrapper li .drop_level2_wrapper{ position: absolute; left: auto; right: 108%; top: 0rem; z-index: 1;}
+
+	#topnav li .drop_level2_wrapper li:hover .drop_level2_wrapper{ 
+		display: block;
+		padding: 1.5rem 0 1.5rem 0; 
+		background: #fff;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	}
+}
+
+/* MEDIA QUERIES */
+@media all and (max-width: 1250px){
+	#topnav > li{ margin: 0 0.5rem;}
+}
+
+@media all and (max-width: 1200px){
+
+	.togglemenu{ background: var(--color-base-1); display: block; font-size: 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; width: 25px; height: 50px;}
+	.open_nav .togglemenu{ width: 50px;}
+	
+	.togglemenu svg{ vertical-align: middle; height: 22px; width: auto;}
+	.open_nav .togglemenu svg{ height: 15px;}
+
+	.togglemenu svg, .togglemenu svg *{ fill: var(--color-overlay-1) !important;}
+
+	#topnav > li > a > span.button_icon{ display: none;} 
+	#topnav{ list-style: none; margin: 0 auto; padding: 0; width: 90%;}
+	#topnav ul{ list-style: none; margin: 0; padding: 0;}
+	#topnav a{ text-decoration: none; display: inline-block;}
+	#topnav > li{ position: relative; width: 100%; padding: 0.5rem 0;}
+	#topnav > li > a{ font-size: 0.8888888888888889rem; letter-spacing: 2px; font-weight: 500; text-transform: uppercase; padding: 0.5rem 0;}
+	
+	.subnav_toggle{ position: absolute; right: 0; padding: 0 1rem; top: calc(0.9rem - 7px);}
+	.subnav_toggle_icon{ font-size: 0;}
+	.subnav_toggle svg{ vertical-align: middle; transition: all 0.3s;}
+	.subnav_toggle svg, .subnav_toggle svg *{ fill: var(--color-base-1) !important;}
+	.subnav_toggle.open svg{ transform: rotate(180deg);}
+	
+	#topnav > li > .drop_level2_wrapper > ul{ margin-left: 1rem; border-left: solid 1px #C1C7CA; background: #ffffff;}
+	#topnav li li{ padding: 0 0 0 1rem;}
+	#topnav li li a{ color: #151210!important; font-size: 1rem; padding: 0.5rem 0;}
+	
+	#topnav > li > .drop_level2_wrapper{ display: none; background: #ffffff;}
+}
+
+
+.header_right_container {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.nav_panel {
+    position: relative;
+    background: #fff;
+}
+
+.nav span.button_icon svg, .button span.button_icon svg * {
+    fill: var(--color-overlay-1) !important;
+}
+
+.nav span.button_icon svg {
+    height: 8px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.link > .button_icon{
+	margin-left: 5px;
+}
+
+@media (max-width: 1200px){
+
+	.header_right_container {
+		margin-left: 0;
+	}
+	.nav_panel {
+		position: fixed;
+		right: -110%;
+		top: 0px;
+		width: 100vw;
+		height: 100vh;
+		transition: all 0.3s;
+		z-index: 1000;
+	}
+	.nav_panel.open {
+		right: 0;
+	}
+	.nav_panel_content {
+		max-height: calc(100vh - 50px);
+		overflow: auto;
+	}
+	.mobile_top_row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 1rem auto;
+		width: 90%;
+	}
+	.mobile_bottom_row {
+		margin: 2rem 0 0 0;
+		background: var(--color-base-1);
+		padding: 2rem 0;
+	}
+	#topnav > li > .drop_level2_wrapper {
+		display: none;
+	}
+
+				.utility_nav {
+					display: flex;
+					flex-direction: column;
+					margin: 0 auto;
+					width: 90%;
+				}
+				.utility_nav a {
+					display: inline-block;
+					padding: 0.25rem 0;
+					margin: 0.25rem 0;
+					text-decoration: none;
+					color: var(--color-overlay-1);
+					font-size: 1rem;
+				}
+	
+}
+
+@media (min-width: 1200px){
+	#topnav > li > a {
+		display: flex !important;
+		height: 100px;
+		align-items: center;
+		padding: 0 !important;
+	}
+}
+
+.nav-item.active{
+	background-color: var(--color-base-1) !important;
+}
+.nav-item.active > a{
+	color: var(--color-overlay-1) !important;
+}
+.nav-item.active > a svg *{
+	fill: var(--color-overlay-1) !important;
+}
+footer .nav-item.active > a{
+	padding-left: 1rem;
+}
+
+#menu .default a{
+	font-weight: 700;
+}
+
+@media screen and (max-width:1200px){
+	.open_nav li.active > a{
+		margin-left:1rem;
+	}
+	.open_nav li.active .subnav_toggle.mobile svg *{
+		fill: var(--color-overlay-1) !important;
+	}
+
+	.open_nav li.active .drop_level2_wrapper a{
+		color: var(--color-overlay-1) !important;
+	}
+
+}
+
+#inside_nav .flyout_arrow{
+	display: none;;
+}
+
+a.m1.link[href="/"] span{
+	display:none;
+}
