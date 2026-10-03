@@ -6,6 +6,9 @@
 .uk-button-text:hover span {
     transform: translateX(0.3rem)
 }
+.middle{
+    margin-left: -50px;
+}
 .sr-only {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -214,6 +217,15 @@ header {
 .header-bottom .search-toggle-icon:hover svg circle, .header-bottom .search-toggle-icon:hover svg path {
     fill: none;
     stroke: var(--color-base-1) !important
+}
+@media screen and (max-width:1024px) {
+    .middle{
+        margin-left: 0px;
+    }
+
+    .uk-border-squared{
+        height: 50vh !important
+    }
 }
 @media screen and (min-width: 1600px) {
     .remove-padding-resp {
@@ -2461,7 +2473,7 @@ button.uk-icon:not(:disabled) {
 }
 .uk-grid-match>*, .uk-grid-item-match {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 .uk-grid-match>*>:not([class*=uk-width]), .uk-grid-item-match>:not([class*=uk-width]) {
     box-sizing: border-box;
