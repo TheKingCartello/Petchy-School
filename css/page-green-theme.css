@@ -1,0 +1,51 @@
+:root {
+  --color-base-1: #087b3e;
+  --color-base-2: #eff9d8;
+}
+
+body.about-page,
+body.gallery-page {
+  background: #f7faf6;
+}
+
+body.about-page header,
+body.gallery-page header,
+body.about-page header .header-top,
+body.gallery-page header .header-top,
+body.about-page header .header-bottom,
+body.gallery-page header .header-bottom,
+body.about-page header .header_right_container,
+body.gallery-page header .header_right_container,
+body.about-page header .nav_panel,
+body.gallery-page header .nav_panel {
+  background-color: #fff !important;
+}
+
+.about-page #hero-section {
+  padding: 36px 20px;
+  background: #f4f9f3 !important;
+}
+
+.gallery-page .gallery-main {
+  padding: 28px 20px;
+  border-radius: 14px;
+}
+
+.gallery-page .grid-item .overlay {
+  background: rgba(6, 59, 34, 0.76);
+}
+
+@media (max-width: 640px) {
+  .about-page #hero-section {
+    padding: 24px 12px;
+  }
+
+  .about-page #hero-section section {
+    padding: 22px 18px;
+  }
+
+  .gallery-page .gallery-main {
+    margin: 24px auto;
+    padding: 18px 14px;
+  }
+}
