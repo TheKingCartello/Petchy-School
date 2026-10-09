@@ -41,7 +41,15 @@
       margin-bottom: 30px;
     }
 
-    #hero-section section h2 {
+    #hero-section > section {
+      box-sizing: border-box;
+      max-width: 1100px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    #hero-section section h2,
+    #hero-section .about-intro h1 {
       color: #075c32;
       font-size: 1.9rem;
       margin-bottom: 20px;
@@ -49,7 +57,8 @@
       position: relative;
     }
 
-    #hero-section section h2::after {
+    #hero-section section h2::after,
+    #hero-section .about-intro h1::after {
       content: "";
       display: block;
       width: 80px;
@@ -60,8 +69,43 @@
     }
 
     #hero-section section p {
-      text-align: justify;
+      max-width: 72ch;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+      line-height: 1.75;
       margin-bottom: 15px;
+    }
+
+    #hero-section .about-intro {
+      padding: 36px 30px;
+      text-align: center;
+    }
+
+    #hero-section .about-intro .about-eyebrow {
+      color: #087b3e;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    #hero-section .about-intro h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin: 0 0 16px;
+    }
+
+    #hero-section .about-intro h1::after {
+      margin-bottom: 20px;
+    }
+
+    #hero-section .about-intro > p:last-child {
+      color: #4a5b50;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      text-align: center;
     }
 
     .mission-grid {
@@ -83,6 +127,26 @@
     }
     .mission-item p{
       line-height: 1.9;
+    }
+
+    .core-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .core-values li {
+      background: #fff;
+      border: 1px solid #d4e8d8;
+      border-radius: 999px;
+      color: #075c32;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 14px;
     }
 
     .board {
@@ -116,39 +180,50 @@
       font-size: 0.9rem;
       color: #555;
     }
-    .history{
-      padding: 60px;
-    }
-    .history p{
-      line-height: 2;
-      font-size: 18px;
-    }
-    .mission p{
-      font-size: 18px;
-    }
     .proprietor {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       flex-wrap: wrap;
       gap: 30px;
       margin-top: 20px;
     }
-    .prop p{
-      font-size: 18px;
-      line-height: 2;
+
+    .prop--reverse .proprietor {
+      flex-direction: row-reverse;
     }
 
     .proprietor img {
-      width: 280px;
-      height: 320px;
+      width: 300px;
+      height: 360px;
       object-fit: cover;
+      object-position: center 40%;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     .proprietor-content {
       flex: 1;
+      min-width: 0;
     }
+
+    .message-byline {
+      color: #075c32;
+      font-size: 1rem;
+      margin-top: 0;
+    }
+
+    .message-byline span {
+      color: #58665d;
+      display: block;
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .message-signoff {
+      color: #075c32;
+      margin-top: 24px;
+    }
+
     .mission-item {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -159,13 +234,30 @@
     
 
     @media (max-width: 768px) {
-      .proprietor {
+      .proprietor,
+      .prop--reverse .proprietor {
         flex-direction: column;
         align-items: center;
       }
+
       .proprietor img {
-        width: 100%;
+        width: min(100%, 320px);
         height: auto;
+        aspect-ratio: 4 / 5;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #hero-section section {
+        padding: 24px 20px;
+      }
+
+      #hero-section .about-intro {
+        padding: 30px 20px;
+      }
+
+      .mission-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -179,7 +271,7 @@
       </script>
       <div id="skip-nav"><a href="#content-start">Skip Navigation</a></div>
       <div class="sr-only">
-         <h1 tabindex="0">Petchy School</h1>
+         <p>Petchy School</p>
       </div>
       <header>
          <section class="header-top uk-padding-small uk-padding-remove-horizontal">
@@ -457,54 +549,86 @@
                      </div>
                   </article>
                   <article id="tool_541995" class="header_phone uk-visible@l">
-                     <a class="quicklink" href="tel:+2347040446991">+2347061151812</a>
+                     <a class="quicklink" href="tel:+2347061151812">+2347061151812</a>
                   </article>
                </article>
             </div>
          </section>
       </header>
       <section style="background-color: white;" id="hero-section" class="hero has_hero_slideshow uk-background-primary">
+         <section class="about-intro" aria-labelledby="about-title">
+            <p class="about-eyebrow">Welcome to Petchy School</p>
+            <h1 id="about-title">About Petchy School</h1>
+            <p>Discover the story, values, and people behind our community, where every learner is encouraged to grow and reach their potential.</p>
+         </section>
+
+         <!-- HISTORY SECTION -->
+         <section class="history" id="history">
+            <h2>Our History</h2>
+            <p>Petchy Nursery, Primary and Secondary School was established on 9 September 2022 under the leadership of Mr Peter Oluemaka Okafor and Mrs Chioma Okafor. The school operates under a licence granted by the Delta State Ministry of Education.</p>
+            <p>Since its establishment, Petchy School has remained committed to providing quality education and nurturing responsible children. We support every learner's academic, moral, social, and spiritual development.</p>
+            <p>Our teachers and staff work in partnership with families to help learners grow into responsible, confident individuals who contribute to their communities with integrity and excellence.</p>
+         </section>
+
          <section class="mission" id="mission">
-      <h2>Mission, Vision & Core Values</h2>
-      <div class="mission-grid">
-        <div class="mission-item">
-          <h3>Our Mission</h3>
-          <p>Building a greater society, by raising generational leaders through qualitive basic education and the word of God that permeates the Spirit, Soul and Body.</p>
-        </div>
-        <div class="mission-item">
-          <h3 id="vision">Our Vision</h3>
-          <p>To continually improve on step by step teaching techniques, in our pursuit to being among the top 10 schools within 10years in every locality.</p>
-        </div>
-        <div class="mission-item">
-          <h3>Our Core Values</h3>
-          <p>Excellence • Integrity • Faith • Discipline • Service • Leadership</p>
-        </div>
+            <h2>Mission, Vision & Core Values</h2>
+            <div class="mission-grid">
+               <div class="mission-item">
+                  <h3>Our Mission</h3>
+                  <p>To provide an engaging, high-quality, holistic education through excellent teaching, innovative technology, and learning experiences tailored to each student.</p>
+               </div>
+               <div class="mission-item">
+                  <h3 id="vision">Our Vision</h3>
+                  <p>We aim to develop students who demonstrate resilience, respect, integrity, and independence. We prepare them for the future and encourage them to become confident, happy, and active local and global citizens.</p>
+               </div>
+               <div class="mission-item">
+                  <h3>Our Core Values</h3>
+                  <ul class="core-values">
+                     <li>Excellence</li>
+                     <li>Integrity</li>
+                     <li>Faith</li>
+                     <li>Discipline</li>
+                     <li>Service</li>
+                     <li>Respect</li>
+                     <li>Honesty</li>
+                     <li>Hard work</li>
+                     <li>Kindness</li>
+                     <li>Responsibility</li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+
+         <!-- ABOUT THE PROPRIETOR -->
+         <section class="prop" id="proprietor">
+            <h2>A Message from Our Proprietor</h2>
+            <div class="proprietor">
+               <img src="images/Professional Portrait with Blue Suit and Lanyard.png" alt="Portrait of Mr Peter Oluemaka Okafor, proprietor of Petchy School" loading="lazy" decoding="async">
+               <div class="proprietor-content">
+                  <p class="message-byline"><strong>Mr Peter Oluemaka Okafor</strong><span>Proprietor</span></p>
+                  <p>It is my great pleasure to welcome you to Petchy Nursery, Primary and Secondary School, a growing institution committed to shaping lives, building character, and preparing young minds for a purposeful future.</p>
+                  <p>At Petchy School, we believe that education goes beyond academic achievement. Our responsibility is to develop the whole child, academically, morally, socially, emotionally, and spiritually. We strive to equip every learner with the knowledge, confidence, discipline, resilience, and values required to make meaningful contributions to society.</p>
+                  <p>Our progress has been made possible through the dedication of our teachers and staff, the partnership of parents, and the continued support of the wider community. Together, we are building a school culture where every child is valued, encouraged to discover their potential, and empowered to pursue excellence.</p>
+                  <p class="message-signoff">With warm regards,<br><strong>Mr Peter Oluemaka Okafor</strong></p>
+               </div>
+            </div>
+         </section>
+
+         <!-- ABOUT THE PROPRIETRESS -->
+         <section class="prop prop--reverse" id="proprietress">
+            <h2>A Message from Our Proprietress</h2>
+            <div class="proprietor">
+               <img src="images/08.jpg" alt="Mrs Chioma Okafor" loading="lazy" decoding="async">
+               <div class="proprietor-content">
+                  <p class="message-byline"><strong>Mrs Chioma Okafor</strong><span>Proprietress</span></p>
+                  <p>A warm welcome to Petchy Nursery, Primary and Secondary School, a place where every child is welcomed, valued, guided, and encouraged to become the very best version of themselves.</p>
+                  <p>As a school, we understand that entrusting your child to us is a responsibility that goes far beyond the classroom. Parents place in our care not only their children’s education, but also their hopes, dreams, values, and aspirations. We therefore strive to create an atmosphere where children feel safe to learn, confident to express themselves, and inspired to discover their unique abilities.</p>
+                  <p>At Petchy School, we believe that true education is about developing the whole child. Alongside academic excellence, we nurture good manners, discipline, respect, responsibility, compassion, resilience, and sound moral and spiritual values. Our goal is to help our learners grow into individuals who are knowledgeable, confident, considerate, and prepared to make a positive difference wherever they find themselves.</p>
+                  <p class="message-signoff">With warm regards,<br><strong>Mrs Chioma Okafor</strong></p>
+               </div>
+            </div>
+         </section>
       </div>
-    </section>
-
-    
-
-    <!-- HISTORY SECTION -->
-    <section class="history" id="history">
-      <h2>Our History</h2>
-      <p>God’s Heritage International School began with a divine vision to nurture young minds in both academics and faith. Established officially in 2015 after years of planning, the school started as a nursery and primary institution before expanding into a thriving secondary school.</p>
-      <p>Since inception, the school has become a beacon of excellence in Asaba, Delta State — offering a holistic education that balances intellectual growth, moral strength, and spiritual development.</p>
-      <p>With dedicated educators, modern facilities, and a faith-driven curriculum, God’s Heritage continues to stand out as a place where students are molded into leaders who influence their world with integrity and excellence.</p>
-    </section>
-
-    <!-- ABOUT THE PROPRIETOR -->
-    <section class="prop" id="proprietor">
-      <h2>About the Proprietor</h2>
-      <div class="proprietor">
-        <img src="images/01.jpg" alt="Pastor Frederick Okoka">
-        <div class="proprietor-content">
-          <p><strong>Pastor Frederick Okoka</strong> is the visionary founder and proprietor of God’s Heritage International School. His passion for education began in 2000 at Hollywood International School, Asaba, where he served diligently for ten years, rising from classroom teacher to School Administrator.</p>
-          <p>In 2010, he moved to Lumen Christi Private School as Principal, where his leadership transformed the school’s population and reputation within a short time. Inspired by his calling, Pastor Okoka founded God’s Heritage International School to combine academic rigor with Christian principles.</p>
-          <p>Under his guidance, the school has grown into a respected institution producing students of excellence, character, and godly influence.</p>
-        </div>
-      </div>
-    </section>
-  </div>
 
       </section>
      
@@ -522,11 +646,11 @@
                      <address class="uk-margin-remove uk-width-1-1">
                         <div class="uk-text-center uk-text-left@m">
                            <span class="uk-margin-small-right" uk-icon="icon: location"></span>
-                           <span class="address_line">11, Lucas Okonta street off Engr Tata Messiri street,</span><br>
+                           <span class="address_line">No. 1 Petchy School Street, Ogbeozoma Hill Top</span>
                         </div>
                         <div class="uk-text-center uk-text-left@m">
                            <span class="address-indent">
-                           Summit junction Asaba Delta State, Nigeria
+                           Okpanam, Oshimili North L.G.A., Delta State, Nigeria.
                            </span><br>
                         </div>
                         <article class="uk-margin uk-margin-remove-horizontal">
@@ -534,7 +658,7 @@
                               <span class="uk-margin-small-right" uk-icon="icon: receiver"></span><span class="nudge">
                               
                               </span>
-                              <a href="tel:+23470404469911">+234-704-044-6991</a><br>
+                              <a href="tel:+2347061151812">+234-706-115-1812</a><br>
                            </div>
                         </article>
                         <div class="uk-text-center uk-text-left@m">
